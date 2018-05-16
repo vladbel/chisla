@@ -1,4 +1,10 @@
-# Clone workspace and environment
+# running unit tests
+
+```bash
+python3 -m unittest discover -v ./unit_tests "*.py"
+```
+
+# Clone workspace and environment on mac
 
 Virtual environment tutorial:
 https://docs.python.org/3/tutorial/venv.html#managing-packages-with-pip
@@ -25,16 +31,25 @@ pip freeze > venv_mac.config
 pip install -r venv_mac.config
 ```
 
-On Ubuntu
+# Clone workspace and environment on ubuntu
+
 
 to setup venv:
 
 ```bash
+
+## create environment
 sudo apt-get install python-virtualenv
 virtualenv --python=python3.6 chisla_env
+
+## save virtual environment
+pip freeze > venv_ubuntu.config
+
+## clone virtual environment
+pip install -r venv_ubuntu.config
 ```
 
-install missing dependency for matplotlib:
+May need install missing dependency for matplotlib:
 
 ```bash
 sudo apt-get install python3.6-tk
