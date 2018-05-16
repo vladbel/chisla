@@ -14,14 +14,15 @@ python3.6 -m venv chisla_env
 ## activate
 source chisla_env/bin/activate
 
+## if nedded
 ## install new packages
 pip install matplotlib
 
 ## save virtual environment
-pip freeze > requirements.txt
+pip freeze > venv_mac.config
 
 ## clone virtual environment
-pip install -r requirements.txt
+pip install -r venv_mac.config
 ```
 
 On Ubuntu
