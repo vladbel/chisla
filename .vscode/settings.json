@@ -3,5 +3,6 @@
     "python.pythonPath": "${workspaceFolder}/chisla_env/bin/python",
     "python.linting.enabled": true,
     "python.linting.lintOnSave": true,
-    "files.autoSave": "afterDelay"
+    "files.autoSave": "afterDelay",
+    "editor.renderWhitespace": "all"
 }
