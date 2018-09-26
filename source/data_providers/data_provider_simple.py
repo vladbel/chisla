@@ -1,7 +1,7 @@
 """
 Simple data provider
 """
-import data_provider_base as dpb
+import source.data_providers.data_provider_base as dpb
 
 class DataProviderSimple(dpb.DataProviderBase):
     """

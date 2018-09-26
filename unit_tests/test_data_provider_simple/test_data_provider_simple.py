@@ -2,10 +2,11 @@
 import unittest
 
 # appends path to module under test to PYTHONPATH
-import env
+# import unit_tests.test_data_provider_simple as TestDataProviderSimple
+
 
 # module under test
-import data_provider_simple as dps
+import source.data_providers.data_provider_simple as dps
 
 class TestDataProviderSimple(unittest.TestCase):
     """Class docstring"""
