@@ -1,7 +1,14 @@
 # running unit tests
 
 ```bash
-python3 -m unittest discover -v ./unit_tests "*.py"
+./scripts/run-ut.sh
+```
+
+# Lint
+
+```bash
+pylint ./source
+pylint ./unit_tests
 ```
 
 # Clone workspace and environment on mac
