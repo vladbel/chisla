@@ -6,7 +6,7 @@ import unittest
 
 
 # module under test
-import source.data_providers.data_provider_simple as dps
+import data_providers.data_provider_simple as dps
 
 class TestDataProviderSimple(unittest.TestCase):
     """Class docstring"""

@@ -1,3 +1,22 @@
+# Activate virtual environment for development
+# (See "Clone workspace and environment on mac" for first time setup)
+To avoid import/export errors and ensure that all these scenarios working:
+- running from terminal
+- debugging from VS Code
+- Linting
+
+we need to have /source and /unit_tests in PYTHONPATH
+
+use 
+```bash
+source ./scripts/activate-venv.sh
+
+# it will
+# 1) activate environment
+# 2) add paths to pythonpath
+```
+
+
 # running unit tests
 
 ```bash
@@ -39,8 +58,6 @@ pip install -r venv_mac.config
 ```
 
 # Clone workspace and environment on ubuntu
-
-
 to setup venv:
 
 ```bash
