@@ -7,6 +7,7 @@ import unittest
 
 # module under test
 import data_providers.data_provider_simple as dps
+import data_structures.transaction_base as tb
 
 class TestDataProviderSimple(unittest.TestCase):
     """Class docstring"""
