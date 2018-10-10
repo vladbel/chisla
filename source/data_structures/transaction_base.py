@@ -48,14 +48,22 @@ class TransactionBase:
 
     def validate(self) -> bool:
         """
-        validate if all components of transaction are set
+        validate if all components of transaction are set to proper values
+
         """
-        if not self.ticker:
+        if not isinstance(self.ticker, str) \
+                or not self.ticker:
             self.is_valid = False
-        elif self.unit_price is None or self.unit_price == 0 or self.unit_price < 0:
+            self.ticker = None
+        elif not isinstance(self.unit_price, dcml.Decimal) \
+                or self.unit_price is None \
+                or self.unit_price == 0 \
+                or self.unit_price < 0:
             self.is_valid = False
+            self.unit_price = None
+        elif not isinstance(self.number_of_units, int) \
+                or self.number_of_units < 1:
+            self.is_valid = False
+            self.number_of_units = None
         else:
             self.is_valid = True
-
-        if not self.is_valid:
-            raise ValueError("Invalid value for transaction")

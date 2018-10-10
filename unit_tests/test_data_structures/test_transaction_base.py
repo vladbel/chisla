@@ -2,7 +2,6 @@
 import unittest
 
 # standard lib modules
-import sys as s
 import decimal as dcml
 
 # module under test
@@ -20,34 +19,63 @@ class TestTransactionBase(unittest.TestCase):
     def test_valid_transaction_instantiation(self):
         """
         Valid transaction shall have
-        is.valid == True
+        is_valid == True
         """
         transaction = tb.TransactionBase(
-            "ticker",
-            dcml.Decimal(11.01),
-            2)
-        self.assertTrue(transaction.is_valid)
+            ticker="abc",
+            unit_price=dcml.Decimal(11.01),
+            number_of_units=2)
 
-    def test_invalid_transaction_shall_raise_exception(self):
+        self.assertTrue(transaction.is_valid)
+        self.assertTrue(transaction.ticker == "abc")
+
+    def test_invalid_if_empty_string_provided_as_ticker(self):
         """
-        Valid transaction shall have
-        is.valid == True
+        Transaction is invalid if empty ticker provided
+        is.valid == False
         """
-        exception_raised = False
-        try:
-            transaction = tb.TransactionBase(
-                "",
-                dcml.Decimal(11.01),
-                2)
-        except ValueError:
-            error_type, error_value, error_traceback = s.exc_info()
-            if error_type is ValueError \
-                    and error_value.args[0] == "Invalid value for transaction" \
-                    and error_traceback is not None:
-                exception_raised = True
-        finally:
-            self.assertTrue(exception_raised)
-            self.assertFalse(transaction.is_valid)
+        transaction = tb.TransactionBase(
+            ticker="",
+            unit_price=dcml.Decimal(11.01),
+            number_of_units=2)
+
+        self.assertFalse(transaction.is_valid)
+
+    def test_invalid_if_int_provided_as_ticker(self):
+        """
+        Transaction is invalid if empty ticker provided
+        is.valid == False
+        """
+        transaction = tb.TransactionBase(
+            ticker=2,
+            unit_price=dcml.Decimal(11.01),
+            number_of_units=2)
+
+        self.assertFalse(transaction.is_valid)
+
+    def test_invalid_if_nonpositive_number_of_units_provided(self):
+        """
+        Transaction is invalid if non-positive number of
+        units provided
+
+        is_valid == False
+        """
+        transaction = tb.TransactionBase(
+            ticker="abc",
+            unit_price=dcml.Decimal(11.01),
+            number_of_units=0)
+
+        self.assertFalse(transaction.is_valid)
+
+    def test_invalid_if_float_provided_as_number_of_units(self):
+        """Transaction is invalid if float provided as number_of_units"""
+        transaction = tb.TransactionBase(
+            ticker="abc",
+            unit_price=dcml.Decimal(11.01),
+            number_of_units=1.1)
+
+        self.assertFalse(transaction.is_valid)
+        self.assertTrue(transaction.number_of_units is None)
 
 
 if __name__ == '__main__':
