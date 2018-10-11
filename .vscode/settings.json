@@ -4,5 +4,6 @@
     "python.linting.enabled": true,
     "python.linting.lintOnSave": true,
     //"files.autoSave": "afterDelay",
-    "editor.renderWhitespace": "all"
+    "editor.renderWhitespace": "all",
+    "workbench.colorTheme": "Solarized Dark",
 }

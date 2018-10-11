@@ -43,7 +43,8 @@ class TransactionBase:
         if not self.is_valid:
             return None
 
-        result = unit_price * number_of_units
+        result = unit_price * dcml.Decimal(number_of_units)
+        result = result = result.quantize(dcml.Decimal('0.01'))
         return result
 
     def validate(self) -> bool:
@@ -67,3 +68,5 @@ class TransactionBase:
             self.number_of_units = None
         else:
             self.is_valid = True
+
+        return self.is_valid
