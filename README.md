@@ -1,5 +1,6 @@
 # Activate virtual environment for development
-# (See "Clone workspace and environment on mac" for first time setup)
+(See "Clone workspace and environment on mac" for first time setup)
+
 To avoid import/export errors and ensure that all these scenarios working:
 - running from terminal
 - debugging from VS Code
@@ -17,7 +18,7 @@ source ./scripts/activate-venv.sh
 ```
 
 
-# running unit tests
+# Running unit tests
 
 ```bash
 ./scripts/run-ut.sh
