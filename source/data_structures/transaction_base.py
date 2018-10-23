@@ -39,12 +39,16 @@ class TransactionBase:
             number_of_units: int) -> dcml.Decimal:
         """
         basic implementation of total cost
+        1) the result shall have exactly 2 digits after decimal pints
+        2) half round up
         """
         if not self.is_valid:
             return None
 
-        result = unit_price * dcml.Decimal(number_of_units)
-        result = result = result.quantize(dcml.Decimal('0.01'))
+        with dcml.localcontext() as local_context:
+            local_context.rounding = dcml.ROUND_HALF_UP
+            result = unit_price * dcml.Decimal(number_of_units)
+            result = result.quantize(dcml.Decimal('0.01'))
         return result
 
     def validate(self) -> bool:
