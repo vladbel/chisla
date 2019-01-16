@@ -21,6 +21,8 @@ source ./scripts/activate-venv.sh
 
 ```bash
 ./scripts/run-ut.sh
+# or
+./scripts/run-all-ut.sh
 ```
 
 # Lint
