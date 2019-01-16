@@ -12,7 +12,7 @@ class TestDataProviderSimple(unittest.TestCase):
     """Class docstring"""
 
     def test_data_provider_simple(self):
-        """method docstring"""
+        """Data provider shall return data"""
         data_provider = dps.DataProviderSimple()
         result = data_provider.get_data()
         self.assertTrue(isinstance(result, list))

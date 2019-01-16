@@ -49,6 +49,13 @@ class TestDecimal(unittest.TestCase):
             expected_result == calculated_result,
             "expected: " + str(expected_result) + "; actual: " + str(calculated_result))
 
+    def test_decimal_to_int_multiplication(self):
+        value_1 = 2
+        value_2 = dcml.Decimal(11.01)
+        result = dcml.Decimal(value_1) * value_2
+        result = result.quantize(dcml.Decimal('0.01'))
+        self.assertTrue(result == dcml.Decimal('22.02'))
+
 
 
 
