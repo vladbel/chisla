@@ -54,7 +54,6 @@ class TransactionBase:
     def validate(self) -> bool:
         """
         validate if all components of transaction are set to proper values
-
         """
         if not isinstance(self.ticker, str) \
                 or not self.ticker:
