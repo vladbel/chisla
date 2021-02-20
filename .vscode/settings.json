@@ -1,6 +1,6 @@
 {
     "python.linting.pylintEnabled": true,
-    "python.pythonPath": "${workspaceFolder}/chisla_env/bin/python",
+    "python.pythonPath": "chisla_env/bin/python",
     "python.linting.enabled": true,
     "python.linting.lintOnSave": true,
     //"files.autoSave": "afterDelay",
