@@ -66,9 +66,9 @@ to setup venv:
 
 ```bash
 
-## create environment
-sudo apt-get install python-virtualenv
-virtualenv --python=python3.6 chisla_env
+## create environment ( python 3.9)
+sudo apt-get install python-virtualenv 
+virtualenv --python=python3 chisla_env
 
 ## save virtual environment
 pip freeze > venv_ubuntu.config
