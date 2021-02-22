@@ -7,7 +7,7 @@ To avoid import/export errors and ensure that all these scenarios working:
 - Linting
 
 we need to have /source and /unit_tests in PYTHONPATH
-add `path.pth` file with 
+add `chisla_env/lib/path.pth` file with 
 
 (obsolete) use 
 ```bash
