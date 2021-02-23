@@ -2,5 +2,6 @@
 docstring
 """
 __all__ = [
-    "primitives"
+    "edge",
+    "vertex"
     ]
