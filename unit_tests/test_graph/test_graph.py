@@ -18,6 +18,16 @@ class TestGraph(unittest.TestCase):
         self.assertTrue(graph.vertices is not None)
         self.assertTrue(graph.edges is not None)
 
+    def test_graph_add_vertex(self):
+        """--- shall add one vertex to empty graph ---"""
+        graph = gr.Graph()
+        vertex = vx.Vertex("vertex_id", "vertex_value")
+
+        graph.add_vertex(vertex)
+
+        self.assertTrue(graph.vertices is not None)
+        self.assertTrue(len(graph.vertices) == 1)
+
 
 if __name__ == '__main__':
     unittest.main()
