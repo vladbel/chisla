@@ -7,15 +7,11 @@ To avoid import/export errors and ensure that all these scenarios working:
 - Linting
 
 we need to have /source and /unit_tests in PYTHONPATH
-add `chisla_env/lib/path.pth` file with 
-
-(obsolete) use 
+add `chisla_env/lib/path.pth` ( on windows `chisla\chisla_env\Lib\site-packages`) file with
 ```bash
-source ./scripts/activate-venv.sh
-
-# it will
-# 1) activate environment
-# 2) add paths to pythonpath
+C:\Users\vbeliaev\Documents\repos\chisla\source
+C:\Users\vbeliaev\Documents\repos\chisla\source\data_providers
+C:\Users\vbeliaev\Documents\repos\chisla\source\data_structures
 ```
 
 
