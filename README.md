@@ -7,6 +7,7 @@ To avoid import/export errors and ensure that all these scenarios working:
 - Linting
 
 we need to have /source and /unit_tests in PYTHONPATH
+or
 add `chisla_env/lib/path.pth` ( on windows `chisla\chisla_env\Lib\site-packages`) file with
 ```bash
 C:\Users\vbeliaev\Documents\repos\chisla\source
@@ -62,8 +63,8 @@ to setup venv:
 
 ```bash
 
-## create environment ( python 3.9)
-sudo apt-get install python-virtualenv 
+## create environment ( python 3.12)
+sudo apt-get install python3-virtualenv 
 virtualenv --python=python3 chisla_env
 
 ## save virtual environment
@@ -77,4 +78,12 @@ May need install missing dependency for matplotlib:
 
 ```bash
 sudo apt-get install python3.6-tk
+```
+
+add `chisla_env/lib/lib/python3.12/site-packages/path.pth`
+
+```bash
+/home/vladimir/Documents/source/chisla/source
+/home/vladimir/Documents/source/chisla/source/data_providers
+/home/vladimir/Documents/source/chisla/source/data_structures
 ```
