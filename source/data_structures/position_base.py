@@ -18,6 +18,9 @@ class PositionBase:
         """
         self.ticker = ticker
 
+    def __str__(self) -> str:
+        return self.ticker
+
     def apply_tansaction(self,
                          transaction: tr.TransactionBase) -> bool:
         """
