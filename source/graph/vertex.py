@@ -26,6 +26,9 @@ class Vertex:
         self.value = value
         self.vertex_id = v_id
 
+    def __str__(self):
+        return self.vertex_id
+
     def add_edge(self,
                  edge: Edge):
         """
@@ -33,3 +36,10 @@ class Vertex:
         """
         edge.start = self
         self.edges.append(edge)
+
+    def remove_edge(self,
+                    edge: Edge):
+        """
+        Remove edge to vertex
+        """
+        self.edges.remove(edge)

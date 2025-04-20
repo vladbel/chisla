@@ -30,6 +30,9 @@ class Edge:
         self.start = start
         self.end = end
 
+    def __str__(self)->str:
+        return self.edge_id
+
     def is_valid(self):
         """
         Edge shall have valid end and start
